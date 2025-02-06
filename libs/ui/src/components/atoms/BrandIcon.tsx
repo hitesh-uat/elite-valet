@@ -1,0 +1,25 @@
+import clsx from 'clsx'
+import { ReactNode } from 'react'
+
+export interface IBrandIconProps {
+  children?: ReactNode
+  className?: string
+}
+
+export const BrandIcon = ({
+  children = <div className={`bg-gray-100 shadow w-2 h-4 animate-park-car `} />,
+  className,
+}: IBrandIconProps) => {
+  return (
+    <div className="inline-block overflow-hidden">
+      <div
+        className={clsx(
+          'flex items-center justify-center border-2 border-primary w-4 h-6',
+          className,
+        )}
+      >
+        {children}
+      </div>
+    </div>
+  )
+}
